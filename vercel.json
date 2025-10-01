@@ -1,19 +1,8 @@
 {
   "version": 2,
   "name": "saros-dlmm-portfolio-dashboard",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
   "env": {
     "NEXT_PUBLIC_RPC_ENDPOINT": "https://api.mainnet-beta.solana.com"
-  },
-  "functions": {
-    "src/app/api/**/*.ts": {
-      "maxDuration": 30
-    }
   },
   "headers": [
     {
