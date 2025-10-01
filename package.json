@@ -1,0 +1,81 @@
+{
+  "name": "saros-dlmm-portfolio-dashboard",
+  "version": "1.0.0",
+  "description": "Advanced portfolio analytics for Saros DLMM liquidity providers - Demo Challenge Submission",
+  "private": true,
+  "keywords": [
+    "saros",
+    "dlmm",
+    "defi",
+    "solana",
+    "liquidity",
+    "portfolio",
+    "analytics",
+    "dashboard",
+    "nextjs",
+    "typescript"
+  ],
+  "author": "Saros Finance",
+  "license": "MIT",
+  "homepage": "https://saros.finance",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saros-finance/dlmm-portfolio-dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saros-finance/dlmm-portfolio-dashboard/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "echo \"No tests specified\" && exit 0",
+    "docker:build": "docker build -t saros-dlmm-dashboard .",
+    "docker:run": "docker run -p 3000:3000 saros-dlmm-dashboard",
+    "docker:dev": "docker-compose up --build",
+    "docker:prod": "docker-compose -f docker-compose.yml --profile production up --build",
+    "deploy:vercel": "vercel --prod",
+    "deploy:preview": "vercel",
+    "analyze": "ANALYZE=true npm run build",
+    "clean": "rm -rf .next out node_modules/.cache",
+    "postinstall": "echo \"✅ Dependencies installed successfully!\""
+  },
+  "dependencies": {
+    "@saros-finance/dlmm-sdk": "latest",
+    "@solana/wallet-adapter-base": "^0.9.23",
+    "@solana/wallet-adapter-react": "^0.15.35",
+    "@solana/wallet-adapter-react-ui": "^0.9.35",
+    "@solana/wallet-adapter-wallets": "^0.19.32",
+    "@solana/web3.js": "^1.87.6",
+    "bn.js": "^5.2.1",
+    "next": "14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.10.3",
+    "lucide-react": "^0.263.1",
+    "date-fns": "^3.0.6",
+    "clsx": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.5",
+    "@types/node": "^20.11.5",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "typescript": "^5.3.3",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.33",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.1.0"
+  }
+}

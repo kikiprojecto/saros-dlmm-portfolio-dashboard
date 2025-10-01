@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "name": "saros-dlmm-portfolio-dashboard",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_RPC_ENDPOINT": "https://api.mainnet-beta.solana.com"
+  },
+  "functions": {
+    "src/app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/health",
+      "destination": "/api/health"
+    }
+  ]
+}
